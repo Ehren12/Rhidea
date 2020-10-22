@@ -11,7 +11,7 @@ const methodOverride = require("method-override")
 const mongoose = require("mongoose");
 // Load config file
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 require("./config/passport")(passport);
 
