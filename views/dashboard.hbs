@@ -1,0 +1,41 @@
+
+<h3>Hey {{name}}</h3>
+<p class="">Here are your ideas Both public and private ideas you have will appear here</p>
+
+{{#if stories}}
+    <br>
+    <br>
+    <br>
+    <table class="striped z-depth-3" style="padding: 50px !important; background-color: #fff;">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody >
+            {{#each stories}}
+                <tr class="idea-card">
+                    <td id="radius-1"><a href="/ideas/{{_id}}">{{title}}</a></td>
+                    <td><span class="dash-status">{{status}}</span></td>
+                    <td><a href="/ideas/edit/{{_id}}" class="btn btnfloat">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    </td>
+                    
+                    <td id="radius-2">
+                        <form action="/ideas/{{_id}}" method="POST" id="delete_form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                    
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You Havent created any ideas</p>
+{{/if}}
