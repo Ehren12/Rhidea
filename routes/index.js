@@ -22,6 +22,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
         const stories = await Idea.find({ user: req.user.id }).lean()
         res.render('dashboard', {
             name: req.user.firstName,
+            image: req.user.image,
             stories
         })
     } catch (err) {

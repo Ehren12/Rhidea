@@ -78,6 +78,8 @@ app.use(express.static(__dirname + '/public'));
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/ideas", require("./routes/ideas"));
+app.use("/search", require("./routes/search"));
+
 
 const PORT = process.env.PORT || 3000;
 

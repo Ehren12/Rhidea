@@ -132,28 +132,8 @@ router.get("/user/:userId", ensureAuth, async (req, res) => {
   }
 });
 
-router.get("/search/:title", ensureAuth, async (req, res) => {
-  try {
-    const idea = await Idea.find({
-      title: req.params.title,
-    }).lean();
-
-    if (!idea) {
-      return res.render("error/404");
-    }
-
-    if (idea.user != req.user.title) {
-      res.redirect("/ideas");
-    } else {
-      res.render("ideas/index", {
-        idea,
-      });
-    }
-  } catch (err) {
-    console.error(err);
-    return res.render("error/500");
-  }
-
+router.get("/search", async (req, res) => {
+  console.log(req.body.title)
 });
 
 // @desc Dashboard

@@ -1,0 +1,41 @@
+<h1>Ideas</h1>
+
+<div class="row">
+    {{#each ideas}}
+    <div class="col s12 m4">
+        <div class="card" style="border-radius: 20px; ">
+            <div class="card-image">
+                {{{editIcon user ../user _id}}}
+            </div>
+            <div class="card-content center-align">
+                <h5>{{title}}</h5>
+                <p>{{stripTags (truncate description 200)}}</p>
+                <br>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                    <a href="/ideas/user/{{user._id}}">{{user.displayName}}</a>
+                </div>
+                <a class="likeicon" userId="{{user._id}}" onclick="updateLikes()">
+                    <i class="fa fa-lightbulb" aria-hidden="true"> 49 </i>
+                </a>
+            </div>
+            <div class="card-action center-align" style="border-radius: 20px; box-shadow:none;">
+                <a href="/ideas/{{_id}}" class="btn" style="background-color: #41aea9;">Read More...</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>No Stories Here</p>
+    {{/each}}
+
+</div>
+
+<script>
+    function updateLikes() {
+            id = $('.likeicon').attr('userId');
+            $.post('/index/' + id, function (response) {
+                $('fa-lightbulb').text(response.likeCount); //your counter on a page
+                //and update likes counter with response
+            })
+        }
+</script>
