@@ -68,7 +68,7 @@ input[type=text]{
 .header-greating{
   
   background-color: #414141;
-  width: 852px;
+  width: 770px;
   height: 252px;
   
   padding-left: 30px;
@@ -98,7 +98,7 @@ table{
   padding-right: 30px;
   padding-top: 10px;
   background-color: #414141;
-  width: 852px;
+  width: 770px;
   height: 97px;
 
   text-decoration: none;
@@ -110,7 +110,7 @@ select{
   background-color: #414141;
   border: none;
   border-left: #CA3E47 solid 11px;
-
+  color: #fff;
   width: 600px;
 
   margin: 30px auto 30px auto;
@@ -217,7 +217,7 @@ box-shadow:  27px 27px 54px #373737,
 
 .profile-image-dashboard > img{
   width: 325px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .fa-edit{
@@ -293,6 +293,10 @@ li{
   float: left;
   padding: 15px;
 
+}
+
+input{
+  color: #fff;
 }
 
 .more-btn{
