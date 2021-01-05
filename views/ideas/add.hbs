@@ -1,49 +1,45 @@
 
-<div class="form">
-    <h3>Add Your Idea</h3>
-    <form action="/ideas" method="POST">
-        <div>
-            <div>
-                <h5 for="title">Title of Idea</h5>
-                <input type="text" id="title" name="title">
+<div class="content_container">
+    <div class="form">
+        <div class="greeting_text">
+            <h1>Create your new idea right here!</h1>
+        </div>
+        <form action="/ideas" method="POST">
+            <div class="input_div">
+                
+                <input type="text" id="title" name="title" maxlength="30">
+                <label for="title" class="label"><span class="label-content">Title</span></label>
                 
             </div>
-        </div>
 
-        <div>
-            <div>
-                <h5>Status</h5>
+            <div class="input_div">
+                
                 <select id="status" name="status">
-                    <option value="public" selected>Public</option>
+                    <option value="public" >Public</option>
                     <option value="private">Private</option>
                 </select>
+                <label for="status" class="label"><span class="label-content">Status</span></label>
                 
             </div>
-        </div>
-
-        <div>
-            <div>
-                <h5>Whats your idea about?</h5>
-                <textarea id="description" name="description"></textarea>
+            <div class="input_div">
+                
+                <textarea id="description" name="description" maxlength="150" ></textarea>
+                <label for="description" class="label"><span class="label-content">Description</span></label>
             </div>
-        </div>
-
-        <div>
-            <div>
-                <h5>What problem does it solve (optional)</h5>
-                <textarea id="problem" name="problem"></textarea>
+            <div class="input_div">
+                
+                <textarea id="problem" name="problem"  maxlength="100"></textarea>
+                <label for="problem" class="label"><span class="label-content">Problem (optional)</span></label>
             </div>
-        </div>
-
-        <div>
-            <h5 >Type in some Tags</h5>
-            <input type="text" id="tags" name="tags">
-            
-        </div>
-
-        <div>
-            <input type="submit" value="Save" class="btn">
-            <a href="/dashboard" class="cancel-btn-form">Cancel</a>
-        </div>
-    </form>
+            <div class="input_div">
+                
+                <input type="text" id="tags" name="tags">
+                <label for="tags" class="label"><span class="label-content">Tags (optional).</span></label>
+            </div>
+            <div class="form-controls">
+                <input type="submit" value="Save" class="btn">
+                
+            </div>
+        </form>
+    </div>
 </div>

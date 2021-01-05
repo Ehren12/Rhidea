@@ -14,17 +14,19 @@
                 {{{idea.problem}}}
                 
                 <h6 class="bold">Tags</h6>
-                {{{idea.tags}}}
+                {{{idea.tags}}} <br><br>
+                <span class="card-title">By {{idea.user.displayName}}</span> <br> 
+                <a href="/ideas/user/{{idea.user._id}}">More From {{idea.user.firstName}}</a>
             </div>
         </div>
     </div>
     <div class="col-5">
         <div class="user-info">
             <div class="card-content">
-                <span class="card-title">By {{idea.user.displayName}}</span>
+                
                 <img src="{{idea.user.image}}"  class="profile-image-dashboard">
-                <br>
-                <a href="/ideas/user/{{idea.user._id}}">More From {{idea.user.firstName}}</a>
+
+                
             </div>
         </div>
     </div>
