@@ -9,7 +9,11 @@ const MongoStore = require("connect-mongo")(session);
 const path = require("path");
 const methodOverride = require("method-override")
 const mongoose = require("mongoose");
+const compression = require('compression')
 // Load config file
+
+//Compress
+
 
 dotenv.config({ path: "./config/.env" });
 
@@ -19,8 +23,11 @@ connectDB();
 
 const app = express();
 
+app.use(compression())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+
 
 app.use(
     methodOverride(function (req, res) {
@@ -73,7 +80,7 @@ app.use(function (req, res, next) {
     next()
   })
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {maxAge: 31557600}));
 
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
@@ -81,7 +88,7 @@ app.use("/ideas", require("./routes/ideas"));
 app.use("/search", require("./routes/search"));
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(

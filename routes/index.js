@@ -19,7 +19,7 @@ router.get('/', ensureGuest, (req, res) => {
 router.get('/dashboard', ensureAuth, async (req, res) => {
 
     try {
-        const stories = await Idea.find({ user: req.user.id }).lean()
+        const stories = await Idea.find({ user: req.user.id }).lean().limit(10)
         res.render('dashboard', {
             name: req.user.firstName,
             image: req.user.image,
