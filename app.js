@@ -15,7 +15,7 @@ const compression = require('compression')
 //Compress
 
 
-dotenv.config({ path: "./config/.env" });
+dotenv.config({ path: "./config/.env.config" });
 
 require("./config/passport")(passport);
 
